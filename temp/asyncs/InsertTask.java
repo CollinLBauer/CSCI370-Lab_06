@@ -6,7 +6,6 @@ import com.example.roomdatabase.entity.Person;
 
 public class InsertTask extends AsyncTask<Person, Void, Void> {
 
-
     
 
     @Override
