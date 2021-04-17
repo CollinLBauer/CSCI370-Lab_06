@@ -3,9 +3,15 @@ package com.example.roomdatabase.asyncs;
 import android.content.Intent;
 import android.os.AsyncTask;
 
-public class RetrievalTask extends AsyncTask {
+import com.example.roomdatabase.PersonsActivity;
+import com.example.roomdatabase.entity.Person;
+
+import java.util.ArrayList;
+
+public class RetrievalTask extends AsyncTask<Void, Void, Void> {
+
     @Override
-    protected Object doInBackground(Object[] objects) {
+    protected Void doInBackground(Void... voids) {
         ArrayList<String> personNames = new ArrayList<>();
         for(Person p: persons) {
             personNames.add(p.getName());

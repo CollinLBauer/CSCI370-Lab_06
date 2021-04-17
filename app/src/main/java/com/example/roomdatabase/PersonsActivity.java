@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class PersonActivity extends AppCompatActivity {
+public class PersonsActivity extends AppCompatActivity {
 
     Context context;
     ListView listView;
@@ -23,9 +23,9 @@ public class PersonActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.personName);
 
-        ArrayList<String> i = (ArrayList) this.getIntent().getExtras().get("Persons");
+        ArrayList<?> i = (ArrayList<?>) this.getIntent().getExtras().get("Persons");
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, i);
+        ArrayAdapter<?> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, i);
 
         listView.setAdapter(adapter);
     }
