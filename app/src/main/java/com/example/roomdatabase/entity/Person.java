@@ -6,6 +6,8 @@ import android.os.Parcelable;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import org.jetbrains.annotations.NotNull;
+
 @Entity
 public class Person implements Parcelable {
     @PrimaryKey(autoGenerate = true)
@@ -37,6 +39,11 @@ public class Person implements Parcelable {
         return 0;
     }
 
+    @NotNull
+    @Override
+    public String toString() {
+        return String.format("%d: %s",id, name);
+    }
 
     // parcel stuff I guess?
     @Override

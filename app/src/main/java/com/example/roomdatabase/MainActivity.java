@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -26,6 +27,8 @@ import java.util.ArrayList;
  * Admittedly, maybe paying closer attention to the threading lab would have helped.
  */
 public class MainActivity extends AppCompatActivity {
+
+    final String TAG = "MainActivity";
 
     final String DATABASE_NAME = "lab-database";
     Context context;
@@ -64,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
             else {
                 Toast.makeText(context, "Invalid name", Toast.LENGTH_SHORT).show();
             }
+
+            entry.setText("");
         });
         listButton.setOnClickListener(v -> {
             Intent intent = new Intent(context, PersonsActivity.class);
@@ -93,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
             }
 
             intent.putParcelableArrayListExtra("Persons", myRunnable.getPersons());
+
+            Log.i(TAG, "Starting PersonsActivity");
             startActivity(intent);
 
         });
